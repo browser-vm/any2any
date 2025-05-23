@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 import os
 import sys
-import random
 import argparse
 from PIL import Image
 from tqdm import tqdm
 import ffmpeg
+import secrets
 
 FUNNY_MESSAGES = [
     "Reticulating splines...",
@@ -26,7 +26,7 @@ COMMON_VIDEO_FORMATS = ['mp4', 'avi', 'mov', 'mkv', 'webm']
 
 
 def get_funny_message():
-    return random.choice(FUNNY_MESSAGES)
+    return secrets.choice(FUNNY_MESSAGES)
 
 
 def convert_image(input_path, output_path, output_format, lossless=False):
